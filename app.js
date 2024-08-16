@@ -15,6 +15,10 @@ function wrapText(text, maxWidth, fontSize) {
   const lines = [];
   let currentLine = '';
 
+  console.log(text)
+
+  console.log(words)
+
   words.forEach(word => {
     if ((currentLine + word).length * (fontSize / 2) < maxWidth) {
       currentLine += (currentLine ? ' ' : '') + word;
