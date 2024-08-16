@@ -29,6 +29,10 @@ function wrapText(text, maxWidth, fontSize) {
   return lines;
 }
 
+app.get('/ping', (req, res) => {
+  res.status(200).send('pong');
+});
+
 // API endpoint to generate image with text
 app.post('/generate-image', async (req, res) => {
   try {
@@ -88,6 +92,19 @@ app.post('/generate-image', async (req, res) => {
     res.status(500).json({ error: 'Failed to generate image' });
   }
 });
+
+
+function pingServer() {
+  const url = process.env.SERVER_URL || 'http://your-app-url.onrender.com';
+  axios.get(`${url}/ping`)
+    .then(() => console.log('Server pinged successfully'))
+    .catch(error => console.error('Failed to ping server:', error));
+}
+
+// Ping every 14 minutes (840000 ms)
+const PING_INTERVAL = 2 * 60 * 60 * 1000;
+
+setInterval(pingServer, PING_INTERVAL);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
