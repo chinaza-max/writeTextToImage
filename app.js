@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Function to wrap text
 function wrapText(text, maxWidth, fontSize) {
-  const words = text.split('');
+  const words = text.split(' ');
   const lines = [];
   let currentLine = '';
 
