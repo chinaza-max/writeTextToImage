@@ -40,7 +40,7 @@ app.post('/generate-image', async (req, res) => {
       return res.status(400).json({ error: 'Text is required' });
     }
 
-    const width = 800;
+    const width = 900;
     const height = 600;
     const fontSize = 35;
     const maxWidth = 700;
