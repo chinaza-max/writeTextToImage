@@ -15,9 +15,6 @@ function wrapText(text, maxWidth, fontSize) {
   const lines = [];
   let currentLine = '';
 
-  console.log(text)
-
-  console.log(words)
 
   words.forEach(word => {
     if ((currentLine + word).length * (fontSize / 2) < maxWidth) {
@@ -40,9 +37,9 @@ app.post('/generate-image', async (req, res) => {
       return res.status(400).json({ error: 'Text is required' });
     }
 
-    const width = 900;
-    const height = 600;
-    const fontSize = 35;
+    const width = 800;
+    const height = 800;
+    const fontSize = 35; 
     const maxWidth = 700;
 
     // Path to your background image
