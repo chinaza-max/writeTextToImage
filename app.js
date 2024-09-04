@@ -94,8 +94,9 @@ app.post('/generate-image', async (req, res) => {
 });
 
 
+/*
 function pingServer() {
-  const url = process.env.SERVER_URL || 'http://your-app-url.onrender.com';
+  const url = process.env.SERVER_URL || 'https://writetexttoimage.onrender.com';
   axios.get(`${url}/ping`)
     .then(() => console.log('Server pinged successfully'))
     .catch(error => console.error('Failed to ping server:', error));
@@ -104,7 +105,7 @@ function pingServer() {
 // Ping every 14 minutes (840000 ms)
 const PING_INTERVAL = 2 * 60 * 60 * 1000;
 
-setInterval(pingServer, PING_INTERVAL);
+setInterval(pingServer, PING_INTERVAL);*/
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
